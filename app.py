@@ -70,9 +70,14 @@ if uploaded_file is not None:
     left_face = full_image.crop((0, 0, mid, h))
     right_face = full_image.crop((mid, 0, w, h))
 
-    stroke_input = full_image.resize((128, 128))
+    # 🔍 Resizing to model expected input
+    _, H, W, C = stroke_model.input_shape
+    st.write(f"🔍 Resizing uploaded image to: ({H}, {W}) for stroke model")
+
+    stroke_input = full_image.resize((W, H))
     stroke_array = np.array(stroke_input).astype("float32") / 255.0
     stroke_array = np.expand_dims(stroke_array, axis=0)
+
     st.write("🧠 Running stroke model prediction...")
     stroke_pred = stroke_model.predict(stroke_array)
     affected = int(np.round(stroke_pred[0][0]))
