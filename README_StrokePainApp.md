@@ -19,18 +19,6 @@ Simply upload a **full-face image** of a stroke patient and let the model:
 ✅ You can access the live app here:  
 [🔗 Launch App →](https://huggingface.co/spaces/AdhamQQ/StrokePatientsModel)
 
----
-
-## 🧪 Running Locally (for developers)
-
-```bash
-git clone https://github.com/<your-repo-link>
-cd stroke-pain-app
-pip install -r requirements.txt
-streamlit run app.py
-```
-
----
 
 ## 💾 Models Used
 
@@ -53,7 +41,7 @@ This app is part of a larger system to:
 
 ## ✨ Credits
 
-Developed by [AdhamQQ](https://huggingface.co/AdhamQQ) using:
+using:
 - Streamlit
 - TensorFlow/Keras
 - PyTorch
